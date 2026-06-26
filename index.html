@@ -1550,6 +1550,36 @@ if (!window.matchMedia('(display-mode: standalone)').matches) {
     }
   }, 3000);
 }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  // ---- Supabase connection ----
+  const SUPABASE_URL = "https://nkjeorgxbyydxokzumqk.supabase.co
+  const SUPABASE_KEY = "sb_publishable_huvn-Wtrn48_ANgdtAbcJA_0rn0GdTx";
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  async function loadRealChild() {
+    const { data, error } = await supabase
+      .from('children')
+      .select('full_name, class_name')
+      .limit(1)
+      .single();
+
+    if (error) {
+      console.log("Could not load child:", error.message);
+      return;
+    }
+
+    if (data) {
+      // Find every element showing the old fake name and update it
+      document.querySelectorAll('.cname').forEach(el => {
+        if (el.textContent.includes('Amara Dlamini')) {
+          el.textContent = data.full_name;
+        }
+      });
+    }
+  }
+
+  loadRealChild();
+</script></script>
 </body>
 </html>
