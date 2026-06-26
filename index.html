@@ -1542,7 +1542,7 @@ window.addEventListener('appinstalled', function() {
 
 // ── iOS: show banner after 3s if not already installed ──
 if (!window.matchMedia('(display-mode: standalone)').matches) {
-  setTimeout(function() {
+  setTimeout(function() {, 3000); }
     var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     var banner = document.getElementById('pwa-banner');
     if (isIOS && banner && !deferredPrompt) {
@@ -1550,7 +1550,8 @@ if (!window.matchMedia('(display-mode: standalone)').matches) {
     }
   }, 3000);
 }
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   // ---- Supabase connection ----
   const SUPABASE_URL = "https://nkjeorgxbyydxokzumqk.supabase.co";
