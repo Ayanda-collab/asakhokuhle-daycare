@@ -490,10 +490,11 @@ input:checked+.tsl:before{transform:translateX(20px)}
     <div class="tbar-sub">Parent — sign in to see your child</div>
   </div>
   <div class="lform">
-    <div class="fg"><label class="fl">Phone Number</label><input class="fi" type="tel" value="082 555 9876"/></div>
-    <div class="fg"><label class="fl">Password</label><input class="fi" type="password" value="••••••••"/></div>
+    <div class="fg"><label class="fl">Email Address</label><input class="fi" id="parent-login-email" type="email" placeholder="your@email.com"/></div>
+    <div class="fg"><label class="fl">Password</label><input class="fi" id="parent-login-password" type="password" placeholder="••••••••"/></div>
+    <div id="parent-login-error" style="display:none;color:var(--red);font-size:13px;font-weight:600;margin-bottom:12px;text-align:center"></div>
     <div style="text-align:right;margin-bottom:18px;"><span style="font-size:13px;color:var(--red);font-weight:600;cursor:pointer;">Forgot password?</span></div>
-    <button class="btn btn-r w100" onclick="go('parent-dash')">Sign In →</button>
+    <button class="btn btn-r w100" id="parent-login-btn">Sign In →</button>
     <div style="text-align:center;margin-top:14px;font-size:13px;color:var(--mid);">No account yet? <span style="color:var(--red);font-weight:700;cursor:pointer;" onclick="go('parent-signup')">Register here →</span></div>
   </div>
 </div>
@@ -1413,10 +1414,11 @@ input:checked+.tsl:before{transform:translateX(20px)}
       <div class="steps"><div class="sdot dn"></div><div class="sdot on"></div><div class="sdot"></div><div class="sdot"></div></div>
       <div style="text-align:center;font-size:12px;color:var(--mid);margin-bottom:16px">Step 2 of 4 — Your Details</div>
       <div class="card">
-        <div class="fg"><label class="fl">First Name</label><input class="fi" value="Thandi"/></div>
-        <div class="fg"><label class="fl">Last Name</label><input class="fi" value="Mthembu"/></div>
-        <div class="fg"><label class="fl">Phone Number ✱</label><input class="fi" type="tel" value="082 555 9876"/></div>
-        <div class="fg"><label class="fl">Email (optional)</label><input class="fi" placeholder="your@email.com"/></div>
+        <div class="fg"><label class="fl">First Name</label><input class="fi" id="signup-first-name" placeholder="e.g. Thandi"/></div>
+        <div class="fg"><label class="fl">Last Name</label><input class="fi" id="signup-last-name" placeholder="e.g. Mthembu"/></div>
+        <div class="fg"><label class="fl">Email Address ✱</label><input class="fi" id="signup-email" type="email" placeholder="your@email.com"/></div>
+        <div class="fg"><label class="fl">Phone Number</label><input class="fi" id="signup-phone" type="tel" placeholder="082 000 0000"/></div>
+        <div class="fg"><label class="fl">Password ✱</label><input class="fi" id="signup-password" type="password" placeholder="Choose a password"/></div>
       </div>
       <div class="card">
         <div class="ctitle">Transport & Aftercare</div>
@@ -1430,10 +1432,11 @@ input:checked+.tsl:before{transform:translateX(20px)}
       </div>
       <div class="card">
         <div class="ctitle">Consents ✱</div>
-        <div class="trow"><label class="tog"><input type="checkbox" checked/><span class="tsl"></span></label><div class="tt"><div class="h">POPIA Data Consent ✱</div></div></div>
-        <div class="trow"><label class="tog"><input type="checkbox" checked/><span class="tsl"></span></label><div class="tt"><div class="h">Photo Consent</div></div></div>
+        <div class="trow"><label class="tog"><input type="checkbox" id="signup-popia-consent" checked/><span class="tsl"></span></label><div class="tt"><div class="h">POPIA Data Consent ✱</div></div></div>
+        <div class="trow"><label class="tog"><input type="checkbox" id="signup-photo-consent" checked/><span class="tsl"></span></label><div class="tt"><div class="h">Photo Consent</div></div></div>
       </div>
-      <button class="btn btn-r w100" style="margin-bottom:24px" onclick="go('parent-await')">Submit for Approval →</button>
+      <div id="signup-error" style="display:none;color:var(--red);font-size:13px;font-weight:600;margin-bottom:12px;text-align:center;padding:10px"></div>
+      <button class="btn btn-r w100" id="signup-submit-btn" style="margin-bottom:24px">Submit for Approval →</button>
     </div>
   </div>
 </div>
